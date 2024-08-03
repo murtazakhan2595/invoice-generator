@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormContext, useWatch } from "react-hook-form";
-import { formatNetDays } from "../../utils/MapData";
+import { formatNetDays } from "../../utils/mapData";
 
 interface Item {
   name: string;

@@ -5,9 +5,9 @@ import InvoiceGeneratorHeader from "./Sections/InvoiceGeneratorHeader";
 import InvoiceGeneratorForm from "./Sections/InvoiceGeneratorForm";
 import InvoiceGeneratorPreview from "./Sections/InvoiceGeneratorPreview";
 import { useForm, FormProvider } from "react-hook-form";
-import { transformInvoiceData } from "../utils/MapData";
+import { transformInvoiceData } from "../utils/mapData";
 import { InvoiceData } from "../types/invoiceTypes";
-import { showToast } from './../components/toastUtils';
+import { showToast } from '../components/ToastUtils';
 
 const InvoiceGeneratorApp: React.FC = () => {
   const [createInvoice, { loading, error }] = useMutation(CREATE_INVOICE);

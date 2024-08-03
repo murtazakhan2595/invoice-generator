@@ -1,6 +1,6 @@
 import React from "react";
 import { InputField, SelectField, DatePicker } from "../../components/index";
-import {countryOptions, paymentTermOptions} from "../../Data/SelectInputOptions"
+import {countryOptions, paymentTermOptions} from "../../Data/selectInputOptions"
 
 import ItemList from "./ItemList";
 
