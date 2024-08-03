@@ -6,7 +6,7 @@ import ItemList from "./ItemList";
 
 function BillingForm() {
   return (
-    <div className="flex overflow-hidden flex-col p-6 rounded-3xl max-w-[676px] max-md:px-5 border border-[#cfd4dc]">
+    <div className="flex flex-1 overflow-hidden flex-col p-6 rounded-3xl max-md:px-5 border border-[#cfd4dc]">
       <section className="flex flex-col w-full max-md:max-w-full">
         <h2 className="text-2xl font-semibold leading-loose text-gray-900 max-md:max-w-full">
           Bill From

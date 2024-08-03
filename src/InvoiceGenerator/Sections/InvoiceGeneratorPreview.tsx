@@ -45,7 +45,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col flex-1 shrink p-6 rounded-3xl basis-0 bg-neutral-100 min-w-[240px] max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-col flex-1  p-6 rounded-3xl basis-0 bg-neutral-100 min-w-[240px] max-md:px-5 max-md:max-w-full">
       <div className="w-full text-2xl font-semibold leading-loose text-gray-900 whitespace-nowrap max-md:max-w-full">
         Preview
       </div>
@@ -55,7 +55,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
           <div className="flex mt-2 w-full bg-gray-200 min-h-[1px] max-md:max-w-full" />
         </div>
         <div className="flex flex-col mt-4 w-full max-md:max-w-full">
-          <div className="flex flex-wrap gap-4 items-start w-full max-md:max-w-full">
+          <div className="flex  gap-4 items-start w-full max-md:max-w-full">
             <div className="flex flex-col flex-1 shrink justify-center rounded-lg basis-0 min-w-[240px]">
               <div className="text-zinc-500">Invoice Date</div>
               <div className="font-medium text-gray-900">
@@ -69,7 +69,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 items-start mt-4 w-full max-md:max-w-full">
+          <div className="flex  gap-4 items-start mt-4 w-full max-md:max-w-full">
             <div className="flex flex-col flex-1 shrink justify-center rounded-lg basis-0 min-w-[240px]">
               <div className="text-zinc-500">Billed From</div>
               <div className="font-medium text-gray-900">
@@ -120,7 +120,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center mt-4 w-full rounded-lg max-md:max-w-full">
-          <div className="flex flex-wrap justify-between items-center px-2 w-full rounded bg-neutral-100 text-zinc-500 max-md:max-w-full">
+          <div className="flex  justify-between items-center px-2 w-full rounded bg-neutral-100 text-zinc-500 max-md:max-w-full">
             <div className="w-[164px] py-2">Item</div>
             <div className="w-[120px] py-2">Qty.</div>
             <div className="flex-1 py-2">Price</div>
@@ -129,7 +129,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
           {(formData.items || []).map((item, index) => (
             <div
               key={index}
-              className="flex flex-wrap justify-between items-center px-2 w-full py-2 border-b text-gray-900"
+              className="flex  justify-between items-center px-2 w-full py-2 border-b text-gray-900"
             >
               <div className="w-[164px]">{item.name}</div>
               <div className="w-[120px]">{item.quantity}</div>
