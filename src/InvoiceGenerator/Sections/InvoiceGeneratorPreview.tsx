@@ -45,17 +45,17 @@ const InvoiceGeneratorPreview: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col flex-1  p-6 rounded-3xl basis-0 bg-neutral-100 min-w-[240px] max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-col flex-1 p-2 custom400:p-6 rounded-3xl basis-0 bg-neutral-100 min-w-[240px] w-full">
       <div className="w-full text-2xl font-semibold leading-loose text-gray-900 whitespace-nowrap max-md:max-w-full">
         Preview
       </div>
-      <div className="flex flex-col p-6 mt-4 w-full text-base leading-10 bg-white rounded-2xl shadow-xl max-md:px-5 max-md:max-w-full">
+      <div className="flex flex-col p-2 custom400:p-6 mt-4 w-full text-base leading-10 bg-white rounded-2xl shadow-xl ">
         <div className="flex flex-col w-full text-lg font-semibold text-gray-900 max-md:max-w-full">
           <div className="max-md:max-w-full">New Invoice</div>
           <div className="flex mt-2 w-full bg-gray-200 min-h-[1px] max-md:max-w-full" />
         </div>
         <div className="flex flex-col mt-4 w-full max-md:max-w-full">
-          <div className="flex  gap-4 items-start w-full max-md:max-w-full">
+          <div className="flex  gap-4 items-start w-full max-md:max-w-full flex-wrap xl:flex-nowrap">
             <div className="flex flex-col flex-1 shrink justify-center rounded-lg basis-0 min-w-[240px]">
               <div className="text-zinc-500">Invoice Date</div>
               <div className="font-medium text-gray-900">
@@ -69,8 +69,8 @@ const InvoiceGeneratorPreview: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex  gap-4 items-start mt-4 w-full max-md:max-w-full">
-            <div className="flex flex-col flex-1 shrink justify-center rounded-lg basis-0 min-w-[240px]">
+          <div className="flex  gap-4 items-start mt-4 w-full max-md:max-w-full flex-wrap xl:flex-nowrap">
+            <div className="flex flex-col flex-1 shrink justify-center rounded-lg basis-0 min-w-[240px] ">
               <div className="text-zinc-500">Billed From</div>
               <div className="font-medium text-gray-900">
                 {formData.companyName}
@@ -113,7 +113,7 @@ const InvoiceGeneratorPreview: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col mt-4 max-w-full rounded-lg min-h-[76px] w-[290px]">
+        <div className="flex flex-col mt-4 max-w-full rounded-lg min-h-[76px]">
           <div className="text-zinc-500">Project Description</div>
           <div className="font-medium text-gray-900">
             {formData.projectDescription}
@@ -121,20 +121,22 @@ const InvoiceGeneratorPreview: React.FC = () => {
         </div>
         <div className="flex flex-col justify-center mt-4 w-full rounded-lg max-md:max-w-full">
           <div className="flex  justify-between items-center px-2 w-full rounded bg-neutral-100 text-zinc-500 max-md:max-w-full">
-            <div className="w-[164px] py-2">Item</div>
-            <div className="w-[120px] py-2">Qty.</div>
-            <div className="flex-1 py-2">Price</div>
-            <div className="flex-1 text-right py-2">Total Amount</div>
+            <div className="w-[22%] py-2">Item</div>
+            <div className="w-[22%] py-2">Qty.</div>
+            <div className="w-[22%] py-2">Price</div>
+            <div className="w-[34%] text-right py-2 whitespace-nowrap">
+              Total Amount
+            </div>
           </div>
           {(formData.items || []).map((item, index) => (
             <div
               key={index}
               className="flex  justify-between items-center px-2 w-full py-2 border-b text-gray-900"
             >
-              <div className="w-[164px]">{item.name}</div>
-              <div className="w-[120px]">{item.quantity}</div>
-              <div className="flex-1">${Number(item.price)?.toFixed(2)}</div>
-              <div className="flex-1 text-right">
+              <div className="w-[22%]">{item.name}</div>
+              <div className="w-[22%]">{item.quantity}</div>
+              <div className="w-[22%]">${Number(item.price)?.toFixed(2)}</div>
+              <div className="w-[34%] text-right">
                 ${(item.quantity * item.price).toFixed(2)}
               </div>
             </div>

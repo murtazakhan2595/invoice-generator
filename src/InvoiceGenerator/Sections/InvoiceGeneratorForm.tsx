@@ -5,14 +5,16 @@ import {countryOptions, paymentTermOptions} from "../../Data/selectInputOptions"
 import ItemList from "./ItemList";
 
 function BillingForm() {
+
+
   return (
-    <div className="flex flex-1 overflow-hidden flex-col p-6 rounded-3xl max-md:px-5 border border-[#cfd4dc]">
+    <div className="flex flex-1 overflow-hidden flex-col p-2 custom400:p-6 rounded-3xl  border border-[#cfd4dc] w-full ">
       <section className="flex flex-col w-full max-md:max-w-full">
         <h2 className="text-2xl font-semibold leading-loose text-gray-900 max-md:max-w-full">
           Bill From
         </h2>
         <div className="flex flex-col mt-4 w-full max-md:max-w-full">
-          <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center w-full max-md:max-w-full">
             <InputField name="companyName" label="Company Name" required />
             <InputField name="companyEmail" label="Company Email" required />
           </div>
@@ -22,15 +24,11 @@ function BillingForm() {
               label="Country"
               placeholder="Select Country"
               options={countryOptions}
-              className="w-[202px] max-w-[202px]"
+              className="w-full sm:min-w-[202px] custom900:w-full lg:w-[202px]  lg:max-w-[202px] "
               required
             />
             <InputField name="city" label="City" required />
-            <InputField
-              name="postalCode"
-              label="Postal Code"
-              required
-            />
+            <InputField name="postalCode" label="Postal Code" required />
           </div>
           <InputField
             name="streetAddress"
@@ -46,7 +44,7 @@ function BillingForm() {
           Bill To
         </h2>
         <div className="flex flex-col mt-4 w-full max-md:max-w-full">
-          <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
+          <div className="flex flex flex-col sm:flex-row flex-wrap gap-4 items-center w-full max-md:max-w-full">
             <InputField name="clientName" label="Client's Name" required />
             <InputField name="clientEmail" label="Client's Email" required />
           </div>
@@ -56,7 +54,7 @@ function BillingForm() {
               label="Country"
               placeholder="Select Country"
               options={countryOptions}
-              className="w-[202px] max-w-[202px]"
+              className="w-full sm:min-w-[202px] min-w-[202px] custom900:w-full lg:w-[202px] lg:max-w-[202px]"
               required
             />
             <InputField

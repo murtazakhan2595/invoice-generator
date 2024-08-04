@@ -4,12 +4,7 @@ import DeleteIcon from "../../assets/delete.svg";
 import PlusIcon from "../../assets/plus.svg";
 
 function ItemList() {
-  const {
-    control,
-    register,
-    watch,
-    setValue,
-  } = useFormContext();
+  const { control, register, watch, setValue } = useFormContext();
   
   const { fields, append, remove } = useFieldArray({
     control,
@@ -20,7 +15,17 @@ function ItemList() {
   useEffect(() => {
     if (fields.length === 0) {
       append({ name: "", quantity: 1, price: 0 });
+     setTimeout(() => {
+       const input = document.querySelector(
+         'input[name="companyName"]'
+       ) as HTMLInputElement;
+       if (input) {
+         input.focus();
+       }
+     }, 30);
     }
+    console.log("focus company")
+    
   }, [append, fields.length]);
 
 
@@ -34,9 +39,9 @@ function ItemList() {
           key={field.id}
           className="flex flex-col mt-4 w-full max-md:max-w-full"
         >
-          <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
+          <div className="flex  gap-4 items-center w-full max-md:max-w-full">
             <div className="flex flex-col flex-1 shrink self-stretch my-auto basis-0">
-              <label className="text-sm font-medium leading-none text-slate-700">
+              <label className="text-sm font-medium leading-none text-slate-700 whitespace-nowrap">
                 Item Name
               </label>
               <div className="flex overflow-hidden gap-2 items-center px-3.5 py-2.5 mt-1.5 w-full text-base text-gray-900 bg-white rounded-lg shadow-sm focus-within:border-[#7e56d8] border border-[#cfd4dc]">
@@ -116,7 +121,7 @@ function ItemList() {
                 loading="lazy"
                 src={DeleteIcon}
                 alt=""
-                className="object-contain self-stretch my-auto w-6 aspect-square"
+                className="object-contain self-stretch my-auto min-w-6 aspect-square"
               />
             </button>
           </div>

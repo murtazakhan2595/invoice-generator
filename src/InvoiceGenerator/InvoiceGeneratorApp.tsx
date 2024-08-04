@@ -8,10 +8,13 @@ import { useForm, FormProvider } from "react-hook-form";
 import { transformInvoiceData } from "../utils/mapData";
 import { InvoiceData } from "../types/invoiceTypes";
 import { showToast } from '../components/ToastUtils';
+import { defaultValues } from "../Data/invoiceDefault";
+
+
 
 const InvoiceGeneratorApp: React.FC = () => {
-  const [createInvoice, { loading, error }] = useMutation(CREATE_INVOICE);
-  const methods = useForm<InvoiceData>();
+  const [createInvoice, { loading }] = useMutation(CREATE_INVOICE);
+  const methods = useForm<InvoiceData>({ defaultValues });
 
   const onSubmit = async (data: InvoiceData) => {
     try {
@@ -36,6 +39,7 @@ const InvoiceGeneratorApp: React.FC = () => {
     }
   };
 
+
   return (
     <FormProvider {...methods}>
       <form
@@ -43,7 +47,7 @@ const InvoiceGeneratorApp: React.FC = () => {
         onSubmit={methods.handleSubmit(onSubmit)}
       >
         <InvoiceGeneratorHeader />
-        <section className="flex flex-wrap gap-4 items-start px-8">
+        <section className="flex flex-wrap gap-4 items-start px-2 custom400:px-8">
           <header className="flex flex-col flex-1 shrink basis-0 min-w-[240px] max-md:max-w-full">
             <h1 className="text-3xl font-medium leading-none text-gray-900 max-md:max-w-full">
               New Invoice
@@ -52,7 +56,7 @@ const InvoiceGeneratorApp: React.FC = () => {
               Create new invoice for your customers
             </p>
           </header>
-          <div className="flex gap-3 items-center text-base font-medium whitespace-nowrap">
+          <div className="flex gap-3 items-center text-base font-medium whitespace-nowrap w-full sm:w-fit justify-end">
             <button
               className="flex items-start self-stretch my-auto rounded-lg text-slate-700 border border-[#cfd4dc]"
               type="button"
@@ -65,7 +69,7 @@ const InvoiceGeneratorApp: React.FC = () => {
             <button
               className="flex items-start self-stretch my-auto text-white rounded-lg"
               type="submit"
-              disabled={loading} 
+              disabled={loading}
             >
               <span
                 className={`overflow-hidden gap-2 self-stretch px-5 py-2.5 ${
@@ -77,7 +81,7 @@ const InvoiceGeneratorApp: React.FC = () => {
             </button>
           </div>
         </section>
-        <div className="flex items-start justify-center gap-6 px-8">
+        <div className="flex items-start justify-center gap-6 px-2 custom400:px-8 flex-col custom900:flex-row">
           <InvoiceGeneratorForm />
           <InvoiceGeneratorPreview />
         </div>
