@@ -36,5 +36,20 @@ This project is an Invoice Form application built with React JS, TailwindCSS, Ty
 - **GraphQL API**: [https://sse-frontend-assessment-api-823449bb66ac.herokuapp.com/graphql](https://sse-frontend-assessment-api-823449bb66ac.herokuapp.com/graphql)
 
 ## Setup Instructions
+1. **Clone the Repository**: 
+   ```bash
+   https://github.com/murtazakhan2595/invoice-generator.git
+2. **Navigate to the Project Directory**:
+    ```bash
+    cd invoice-generator
+3. **Install Dependencies**:
+    ```bash
+    npm install
+4. **Start the Development Server:**:
+    ```bash
+    npm start
+5. **Build for Production:**:
+    ```bash
+    npm run build
 
 
